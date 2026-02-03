@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICU Monitor Pro | AI Clinical Intelligence</title>
+    <link rel="stylesheet" href="stylestest!.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Epic Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-bg">
+            <div class="preloader-gradient"></div>
+        </div>
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <div class="logo-morph">
+                    <svg viewBox="0 0 100 100">
+                        <defs>
+                            <linearGradient id="preloaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#6366f1"/>
+                                <stop offset="50%" style="stop-color:#a855f7"/>
+                                <stop offset="100%" style="stop-color:#06b6d4"/>
+                            </linearGradient>
+                        </defs>
+                        <circle class="morph-circle" cx="50" cy="50" r="40"/>
+                    </svg>
+                    <div class="logo-icon-wrap">
+                        <span class="logo-icon-main">⚕</span>
+                    </div>
+                </div>
+                <div class="orbit-rings">
+                    <div class="orbit orbit-1"><span></span></div>
+                    <div class="orbit orbit-2"><span></span></div>
+                    <div class="orbit orbit-3"><span></span></div>
+                </div>
+            </div>
+            <div class="preloader-text-wrap">
+                <div class="preloader-title">
+                    <span class="char">I</span>
+                    <span class="char">C</span>
+                    <span class="char">U</span>
+                    <span class="char space"></span>
+                    <span class="char">M</span>
+                    <span class="char">O</span>
+                    <span class="char">N</span>
+                    <span class="char">I</span>
+                    <span class="char">T</span>
+                    <span class="char">O</span>
+                    <span class="char">R</span>
+                </div>
+                <div class="preloader-subtitle">Clinical Intelligence Platform</div>
+            </div>
+            <div class="preloader-progress">
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                    <div class="progress-glow"></div>
+                </div>
+                <div class="progress-text">Initializing AI Systems...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+        <div class="cursor-trail"></div>
+    </div>
+
+    <!-- Aurora Background -->
+    <div class="aurora-bg">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+        <div class="stars"></div>
+        <div class="grid-perspective"></div>
+        <canvas id="particles"></canvas>
+    </div>
+
+    <!-- Main App -->
+    <div class="app" id="app">
+        <!-- Premium Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-glow"></div>
+            <div class="sidebar-inner">
+                <!-- Logo -->
+                <div class="logo-section">
+                    <a href="#" class="logo">
+                        <div class="logo-icon-container">
+                            <div class="logo-bg"></div>
+                            <div class="logo-icon">
+                                <span>⚕</span>
+                            </div>
+                            <div class="logo-pulse"></div>
+                            <div class="logo-ring"></div>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-title">ICU Monitor</span>
+                            <span class="logo-badge">PRO</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="nav">
+                    <div class="nav-section">
+                        <span class="nav-section-title">Dashboard</span>
+                        <div class="nav-items">
+                            <a href="#patient-section" class="nav-link active" data-section="patient">
+                                <div class="nav-link-bg"></div>
+                                <div class="nav-link-glow"></div>
+                                <div class="nav-icon">
+                                    <span>👤</span>
+                                    <div class="nav-icon-ring"></div>
+                                </div>
+                                <div class="nav-text">
+                                    <span class="nav-label">Patient Info</span>
+                                    <span class="nav-desc">Demographics</span>
+                                </div>
+                                <div class="nav-arrow">
+                                    <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                                </div>
+                            </a>
+
+                            <a href="#vitals-section" class="nav-link" data-section="vitals">
+                                <div class="nav-link-bg"></div>
+                                <div class="nav-link-glow"></div>
+                                <div class="nav-icon pulse-icon">
+                                    <span>❤️</span>
+                                    <div class="nav-icon-ring"></div>
+                                </div>
+                                <div class="nav-text">
+                                    <span class="nav-label">Vital Signs</span>
+                                    <span class="nav-desc">Real-time data</span>
+                                </div>
+                                <span class="nav-badge ml-badge">ML</span>
+                                <div class="nav-arrow">
+                                    <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                                </div>
+                            </a>
+
+                            <a href="#labs-section" class="nav-link" data-section="labs">
+                                <div class="nav-link-bg"></div>
+                                <div class="nav-link-glow"></div>
+                                <div class="nav-icon">
+                                    <span>🧬</span>
+                                    <div class="nav-icon-ring"></div>
+                                </div>
+                                <div class="nav-text">
+                                    <span class="nav-label">Laboratory</span>
+                                    <span class="nav-desc">Test results</span>
+                                </div>
+                                <span class="nav-badge ml-badge">ML</span>
+                                <div class="nav-arrow">
+                                    <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                                </div>
+                            </a>
+
+                            <a href="#context-section" class="nav-link" data-section="context">
+                                <div class="nav-link-bg"></div>
+                                <div class="nav-link-glow"></div>
+                                <div class="nav-icon">
+                                    <span>📋</span>
+                                    <div class="nav-icon-ring"></div>
+                                </div>
+                                <div class="nav-text">
+                                    <span class="nav-label">Clinical Context</span>
+                                    <span class="nav-desc">History & treatments</span>
+                                </div>
+                                <span class="nav-badge ctx-badge">CTX</span>
+                                <div class="nav-arrow">
+                                    <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-section">
+                        <span class="nav-section-title">Analysis</span>
+                        <div class="nav-items">
+                            <a href="#results-section" class="nav-link" data-section="results">
+                                <div class="nav-link-bg"></div>
+                                <div class="nav-link-glow"></div>
+                                <div class="nav-icon">
+                                    <span>📊</span>
+                                    <div class="nav-icon-ring"></div>
+                                </div>
+                                <div class="nav-text">
+                                    <span class="nav-label">Risk Results</span>
+                                    <span class="nav-desc">AI predictions</span>
+                                </div>
+                                <div class="nav-arrow">
+                                    <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- User Profile -->
+                <div class="sidebar-footer">
+                    <div class="user-card">
+                        <div class="user-card-bg"></div>
+                        <div class="user-avatar">
+                            <span>HVR</span>
+                            <div class="avatar-status"></div>
+                            <svg class="avatar-ring" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45"/>
+                            </svg>
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name">Vikranth Reddy</span>
+                            <span class="user-role">
+                                <span class="role-dot"></span>
+                                Intensivist
+                            </span>
+                        </div>
+                        <button class="user-menu-btn">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Floating Header -->
+            <header class="header" id="header">
+                <div class="header-bg"></div>
+                <div class="header-content">
+                    <div class="header-left">
+                        <div class="page-badge">
+                            <span class="badge-dot"></span>
+                            <span>Risk Assessment</span>
+                        </div>
+                        <h1 class="page-title">
+                            <span class="title-line">
+                                <span class="word" data-aos="fade-up">Clinical</span>
+                                <span class="word" data-aos="fade-up" data-aos-delay="100">Intelligence</span>
+                            </span>
+                        </h1>
+                        <p class="page-subtitle">AI-Powered Early Deterioration Prediction System</p>
+                    </div>
+                    <div class="header-right">
+                        <div class="header-metrics">
+                            <div class="metric-card critical-metric">
+                                <div class="metric-icon">
+                                    <span>🔴</span>
+                                    <div class="metric-pulse"></div>
+                                </div>
+                                <div class="metric-data">
+                                    <span class="metric-value">3</span>
+                                    <span class="metric-label">Critical</span>
+                                </div>
+                            </div>
+                            <div class="metric-card warning-metric">
+                                <div class="metric-icon"><span>🟡</span></div>
+                                <div class="metric-data">
+                                    <span class="metric-value">7</span>
+                                    <span class="metric-label">Warning</span>
+                                </div>
+                            </div>
+                            <div class="metric-card stable-metric">
+                                <div class="metric-icon"><span>🟢</span></div>
+                                <div class="metric-data">
+                                    <span class="metric-value">24</span>
+                                    <span class="metric-label">Stable</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-widget">
+                            <div class="time-display">
+                                <span class="time-value" id="time-value">00:00</span>
+                                <span class="time-period" id="time-period">AM</span>
+                            </div>
+                            <span class="date-display" id="date-display">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Scrollable Content -->
+            <div class="content" id="content">
+                <!-- Alert Banner -->
+                <div class="alert-banner glass-card" id="alert-banner">
+                    <div class="alert-icon-wrap">
+                        <span class="alert-icon">💡</span>
+                        <div class="alert-icon-glow"></div>
+                    </div>
+                    <div class="alert-content">
+                        <span class="alert-title">Clinical Decision Support</span>
+                        <span class="alert-text">All AI predictions must be validated by qualified healthcare professionals before clinical action.</span>
+                    </div>
+                    <button class="alert-dismiss" id="alert-dismiss">
+                        <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </button>
+                </div>
+
+                <!-- Patient Section -->
+                <section class="section" id="patient-section">
+                    <div class="card premium-card" data-tilt>
+                        <div class="card-bg"></div>
+                        <div class="card-border"></div>
+                        <div class="card-glow"></div>
+                        <div class="card-shine"></div>
+                        
+                        <div class="card-header">
+                            <div class="card-title-area">
+                                <div class="card-icon-3d">
+                                    <div class="icon-face front">👤</div>
+                                    <div class="icon-face back">🏥</div>
+                                </div>
+                                <div class="card-titles">
+                                    <h2 class="card-title">Patient Information</h2>
+                                    <p class="card-subtitle">Demographics and identification data</p>
+                                </div>
+                            </div>
+                            <div class="card-badges">
+                                <span class="badge badge-ui">
+                                    <span class="badge-icon">🖥️</span>
+                                    UI Display
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="input-grid grid-4">
+                                <!-- Patient ID -->
+                                <div class="input-group">
+                                    <div class="input-wrapper glass-input">
+                                        <input type="text" id="patient-id" class="input" placeholder=" " autocomplete="off">
+                                        <label class="input-label">Patient ID</label>
+                                        <div class="input-highlight"></div>
+                                        <span class="input-tag tag-ui">UI</span>
+                                    </div>
+                                </div>
+
+                                <!-- Age -->
+                                <div class="input-group">
+                                    <div class="input-wrapper glass-input">
+                                        <input type="number" id="age" class="input" placeholder=" " min="0" max="120" autocomplete="off">
+                                        <label class="input-label">Age</label>
+                                        <div class="input-highlight"></div>
+                                        <span class="input-suffix">years</span>
+                                        <span class="input-tag tag-ml">ML</span>
+                                    </div>
+                                </div>
+
+                                <!-- Sex -->
+                                <div class="input-group">
+                                    <div class="input-wrapper glass-input select-wrapper">
+                                        <select id="sex" class="input select">
+                                            <option value="" disabled selected></option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                        <label class="input-label">Sex</label>
+                                        <div class="input-highlight"></div>
+                                        <div class="select-arrow">
+                                            <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                                        </div>
+                                        <span class="input-tag tag-ml">ML</span>
+                                    </div>
+                                </div>
+
+                                <!-- Admission Date -->
+                                <div class="input-group">
+                                    <div class="input-wrapper glass-input">
+                                        <input type="date" id="admission-date" class="input date-input">
+                                        <label class="input-label active">Admission Date</label>
+                                        <div class="input-highlight"></div>
+                                        <span class="input-tag tag-ui">UI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Vitals Section -->
+                <section class="section" id="vitals-section">
+                    <div class="card premium-card" data-tilt>
+                        <div class="card-bg"></div>
+                        <div class="card-border"></div>
+                        <div class="card-glow"></div>
+                        <div class="card-shine"></div>
+                        
+                        <div class="card-header">
+                            <div class="card-title-area">
+                                <div class="card-icon-3d heartbeat">
+                                    <div class="icon-face front">❤️</div>
+                                    <div class="icon-face back">💓</div>
+                                    <div class="heartbeat-waves">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="card-titles">
+                                    <h2 class="card-title">Vital Signs</h2>
+                                    <p class="card-subtitle">Time-series measurements • Enter up to 3 values</p>
+                                </div>
+                            </div>
+                            <div class="card-badges">
+                                <span class="badge badge-live">
+                                    <span class="live-dot"></span>
+                                    LIVE
+                                </span>
+                                <span class="badge badge-ml">
+                                    <span class="badge-icon">🤖</span>
+                                    ML Input
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="vitals-showcase">
+                                <!-- Heart Rate -->
+                                <div class="vital-card" data-vital="hr">
+                                    <div class="vital-bg"></div>
+                                    <div class="vital-border"></div>
+                                    <div class="vital-content">
+                                        <div class="vital-header">
+                                            <div class="vital-icon-wrap">
+                                                <span class="vital-icon">💓</span>
+                                                <svg class="vital-ring" viewBox="0 0 100 100">
+                                                    <circle class="ring-bg" cx="50" cy="50" r="42"/>
+                                                    <circle class="ring-fill hr-ring" cx="50" cy="50" r="42"/>
+                                                </svg>
+                                            </div>
+                                            <div class="vital-info">
+                                                <span class="vital-name">Heart Rate</span>
+                                                <span class="vital-range">60-100 bpm</span>
+                                            </div>
+                                            <span class="vital-code">HR</span>
+                                        </div>
+                                        <div class="vital-inputs">
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input hr" placeholder="V1">
+                                                <div class="mini-input-line"></div>
+                                            </div>
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input hr" placeholder="V2">
+                                                <div class="mini-input-line"></div>
+                                            </div>
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input hr" placeholder="V3">
+                                                <div class="mini-input-line"></div>
+                                            </div>
+                                        </div>
+                                        <div class="vital-footer">
+                                            <span class="vital-unit">bpm</span>
+                                            <div class="vital-status"></div>
+                                        </div>
+                                    </div>
+                                    <div class="vital-wave hr-wave">
+                                        <svg viewBox="0 0 200 40" preserveAspectRatio="none">
+                                            <path class="wave-path" d="M0,20 L30,20 L35,20 L40,5 L45,35 L50,15 L55,25 L60,20 L90,20 L95,20 L100,5 L105,35 L110,15 L115,25 L120,20 L150,20 L155,20 L160,5 L165,35 L170,15 L175,25 L180,20 L200,20"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- SpO2 -->
+                                <div class="vital-card" data-vital="spo2">
+                                    <div class="vital-bg"></div>
+                                    <div class="vital-border"></div>
+                                    <div class="vital-content">
+                                        <div class="vital-header">
+                                            <div class="vital-icon-wrap">
+                                                <span class="vital-icon">🫁</span>
+                                                <svg class="vital-ring" viewBox="0 0 100 100">
+                                                    <circle class="ring-bg" cx="50" cy="50" r="42"/>
+                                                    <circle class="ring-fill spo2-ring" cx="50" cy="50" r="42"/>
+                                                </svg>
+                                            </div>
+                                            <div class="vital-info">
+                                                <span class="vital-name">Oxygen Saturation</span>
+                                                <span class="vital-range">95-100%</span>
+                                            </div>
+                                            <span class="vital-code">SpO₂</span>
+                                        </div>
+                                        <div class="vital-inputs">
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input spo2" placeholder="V1">
+                                                <div class="mini-input-line spo2-line"></div>
+                                            </div>
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input spo2" placeholder="V2">
+                                                <div class="mini-input-line spo2-line"></div>
+                                            </div>
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input spo2" placeholder="V3">
+                                                <div class="mini-input-line spo2-line"></div>
+                                            </div>
+                                        </div>
+                                        <div class="vital-footer">
+                                            <span class="vital-unit">%</span>
+                                            <div class="vital-status"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MAP -->
+                                <div class="vital-card" data-vital="map">
+                                    <div class="vital-bg"></div>
+                                    <div class="vital-border"></div>
+                                    <div class="vital-content">
+                                        <div class="vital-header">
+                                            <div class="vital-icon-wrap">
+                                                <span class="vital-icon">🩸</span>
+                                                <svg class="vital-ring" viewBox="0 0 100 100">
+                                                    <circle class="ring-bg" cx="50" cy="50" r="42"/>
+                                                    <circle class="ring-fill map-ring" cx="50" cy="50" r="42"/>
+                                                </svg>
+                                            </div>
+                                            <div class="vital-info">
+                                                <span class="vital-name">Mean Arterial Pressure</span>
+                                                <span class="vital-range">70-100 mmHg</span>
+                                            </div>
+                                            <span class="vital-code">MAP</span>
+                                        </div>
+                                        <div class="vital-inputs">
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input map" placeholder="V1">
+                                                <div class="mini-input-line map-line"></div>
+                                            </div>
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input map" placeholder="V2">
+                                                <div class="mini-input-line map-line"></div>
+                                            </div>
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input map" placeholder="V3">
+                                                <div class="mini-input-line map-line"></div>
+                                            </div>
+                                        </div>
+                                        <div class="vital-footer">
+                                            <span class="vital-unit">mmHg</span>
+                                            <div class="vital-status"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Respiratory Rate -->
+                                <div class="vital-card" data-vital="resp">
+                                    <div class="vital-bg"></div>
+                                    <div class="vital-border"></div>
+                                    <div class="vital-content">
+                                        <div class="vital-header">
+                                            <div class="vital-icon-wrap breathing">
+                                                <span class="vital-icon">💨</span>
+                                                <svg class="vital-ring" viewBox="0 0 100 100">
+                                                    <circle class="ring-bg" cx="50" cy="50" r="42"/>
+                                                    <circle class="ring-fill resp-ring" cx="50" cy="50" r="42"/>
+                                                </svg>
+                                            </div>
+                                            <div class="vital-info">
+                                                <span class="vital-name">Respiratory Rate</span>
+                                                <span class="vital-range">12-20 br/min</span>
+                                            </div>
+                                            <span class="vital-code">Resp</span>
+                                        </div>
+                                        <div class="vital-inputs">
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input resp" placeholder="V1">
+                                                <div class="mini-input-line resp-line"></div>
+                                            </div>
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input resp" placeholder="V2">
+                                                <div class="mini-input-line resp-line"></div>
+                                            </div>
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input resp" placeholder="V3">
+                                                <div class="mini-input-line resp-line"></div>
+                                            </div>
+                                        </div>
+                                        <div class="vital-footer">
+                                            <span class="vital-unit">br/min</span>
+                                            <div class="vital-status"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Temperature -->
+                                <div class="vital-card" data-vital="temp">
+                                    <div class="vital-bg"></div>
+                                    <div class="vital-border"></div>
+                                    <div class="vital-content">
+                                        <div class="vital-header">
+                                            <div class="vital-icon-wrap">
+                                                <span class="vital-icon">🌡️</span>
+                                                <svg class="vital-ring" viewBox="0 0 100 100">
+                                                    <circle class="ring-bg" cx="50" cy="50" r="42"/>
+                                                    <circle class="ring-fill temp-ring" cx="50" cy="50" r="42"/>
+                                                </svg>
+                                            </div>
+                                            <div class="vital-info">
+                                                <span class="vital-name">Temperature</span>
+                                                <span class="vital-range">36.1-37.2°C</span>
+                                            </div>
+                                            <span class="vital-code">Temp</span>
+                                        </div>
+                                        <div class="vital-inputs">
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input temp" placeholder="V1" step="0.1">
+                                                <div class="mini-input-line temp-line"></div>
+                                            </div>
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input temp" placeholder="V2" step="0.1">
+                                                <div class="mini-input-line temp-line"></div>
+                                            </div>
+                                            <div class="mini-input-wrap">
+                                                <input type="number" class="mini-input temp" placeholder="V3" step="0.1">
+                                                <div class="mini-input-line temp-line"></div>
+                                            </div>
+                                        </div>
+                                        <div class="vital-footer">
+                                            <span class="vital-unit">°C</span>
+                                            <div class="vital-status"></div>
+                                        </div>
+                                    </div>
+                                    <div class="temp-indicator">
+                                        <div class="temp-fill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Labs Section -->
+                <section class="section" id="labs-section">
+                    <div class="card premium-card" data-tilt>
+                        <div class="card-bg"></div>
+                        <div class="card-border"></div>
+                        <div class="card-glow"></div>
+                        <div class="card-shine"></div>
+                        
+                        <div class="card-header">
+                            <div class="card-title-area">
+                                <div class="card-icon-3d dna">
+                                    <div class="icon-face front">🧬</div>
+                                    <div class="icon-face back">🔬</div>
+                                    <div class="dna-helix">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="card-titles">
+                                    <h2 class="card-title">Laboratory Values</h2>
+                                    <p class="card-subtitle">Time-series results • Enter up to 3 values</p>
+                                </div>
+                            </div>
+                            <div class="card-badges">
+                                <span class="badge badge-ml">
+                                    <span class="badge-icon">🤖</span>
+                                    ML Input
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="labs-grid">
+                                <!-- Lactate -->
+                                <div class="lab-card glass-card">
+                                    <div class="lab-card-glow"></div>
+                                    <div class="lab-header">
+                                        <div class="lab-info">
+                                            <span class="lab-name">Lactate</span>
+                                            <span class="lab-ref">0.5-2.0 mmol/L</span>
+                                        </div>
+                                        <div class="lab-indicator"></div>
+                                    </div>
+                                    <div class="lab-inputs">
+                                        <input type="number" class="lab-input lactate" placeholder="L1" step="0.1">
+                                        <input type="number" class="lab-input lactate" placeholder="L2" step="0.1">
+                                        <input type="number" class="lab-input lactate" placeholder="L3" step="0.1">
+                                    </div>
+                                    <div class="lab-footer">
+                                        <span class="lab-unit">mmol/L</span>
+                                        <div class="lab-bar"><div class="lab-bar-fill"></div></div>
+                                    </div>
+                                </div>
+
+                                <!-- WBC -->
+                                <div class="lab-card glass-card">
+                                    <div class="lab-card-glow"></div>
+                                    <div class="lab-header">
+                                        <div class="lab-info">
+                                            <span class="lab-name">WBC Count</span>
+                                            <span class="lab-ref">4.5-11.0 ×10⁹/L</span>
+                                        </div>
+                                        <div class="lab-indicator"></div>
+                                    </div>
+                                    <div class="lab-inputs">
+                                        <input type="number" class="lab-input wbc" placeholder="L1" step="0.1">
+                                        <input type="number" class="lab-input wbc" placeholder="L2" step="0.1">
+                                        <input type="number" class="lab-input wbc" placeholder="L3" step="0.1">
+                                    </div>
+                                    <div class="lab-footer">
+                                        <span class="lab-unit">×10⁹/L</span>
+                                        <div class="lab-bar"><div class="lab-bar-fill"></div></div>
+                                    </div>
+                                </div>
+
+                                <!-- Creatinine -->
+                                <div class="lab-card glass-card">
+                                    <div class="lab-card-glow"></div>
+                                    <div class="lab-header">
+                                        <div class="lab-info">
+                                            <span class="lab-name">Creatinine</span>
+                                            <span class="lab-ref">0.7-1.3 mg/dL</span>
+                                        </div>
+                                        <div class="lab-indicator"></div>
+                                    </div>
+                                    <div class="lab-inputs">
+                                        <input type="number" class="lab-input creatinine" placeholder="L1" step="0.01">
+                                        <input type="number" class="lab-input creatinine" placeholder="L2" step="0.01">
+                                        <input type="number" class="lab-input creatinine" placeholder="L3" step="0.01">
+                                    </div>
+                                    <div class="lab-footer">
+                                        <span class="lab-unit">mg/dL</span>
+                                        <div class="lab-bar"><div class="lab-bar-fill"></div></div>
+                                    </div>
+                                </div>
+
+                                <!-- Platelets -->
+                                <div class="lab-card glass-card">
+                                    <div class="lab-card-glow"></div>
+                                    <div class="lab-header">
+                                        <div class="lab-info">
+                                            <span class="lab-name">Platelets</span>
+                                            <span class="lab-ref">150-400 ×10⁹/L</span>
+                                        </div>
+                                        <div class="lab-indicator"></div>
+                                    </div>
+                                    <div class="lab-inputs">
+                                        <input type="number" class="lab-input platelets" placeholder="L1">
+                                        <input type="number" class="lab-input platelets" placeholder="L2">
+                                        <input type="number" class="lab-input platelets" placeholder="L3">
+                                    </div>
+                                    <div class="lab-footer">
+                                        <span class="lab-unit">×10⁹/L</span>
+                                        <div class="lab-bar"><div class="lab-bar-fill"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Context Section -->
+                <section class="section" id="context-section">
+                    <div class="card premium-card context-card" data-tilt>
+                        <div class="card-bg context-bg"></div>
+                        <div class="card-border context-border"></div>
+                        <div class="card-glow context-glow"></div>
+                        <div class="card-shine"></div>
+                        
+                        <div class="card-header">
+                            <div class="card-title-area">
+                                <div class="card-icon-3d">
+                                    <div class="icon-face front">📋</div>
+                                    <div class="icon-face back">📝</div>
+                                </div>
+                                <div class="card-titles">
+                                    <h2 class="card-title">Clinical Context</h2>
+                                    <p class="card-subtitle">For AI explanation only — NOT used in ML prediction</p>
+                                </div>
+                            </div>
+                            <div class="card-badges">
+                                <span class="badge badge-ctx">
+                                    <span class="badge-icon">💬</span>
+                                    Contextual
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <!-- Comorbidities -->
+                            <div class="context-block">
+                                <div class="context-header">
+                                    <h3><span class="context-icon">🏥</span> Comorbidities</h3>
+                                    <span class="context-hint">For LLM explanation</span>
+                                </div>
+                                <div class="checkbox-grid">
+                                    <label class="checkbox-card glass-card">
+                                        <input type="checkbox" name="comorbidities" value="Diabetes">
+                                        <div class="checkbox-content">
+                                            <div class="checkbox-icon">🩸</div>
+                                            <span class="checkbox-label">Diabetes</span>
+                                            <div class="checkbox-check">
+                                                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-card glass-card">
+                                        <input type="checkbox" name="comorbidities" value="Hypertension">
+                                        <div class="checkbox-content">
+                                            <div class="checkbox-icon">💓</div>
+                                            <span class="checkbox-label">Hypertension</span>
+                                            <div class="checkbox-check">
+                                                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-card glass-card">
+                                        <input type="checkbox" name="comorbidities" value="COPD">
+                                        <div class="checkbox-content">
+                                            <div class="checkbox-icon">🫁</div>
+                                            <span class="checkbox-label">COPD</span>
+                                            <div class="checkbox-check">
+                                                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-card glass-card">
+                                        <input type="checkbox" name="comorbidities" value="Chronic Kidney Disease">
+                                        <div class="checkbox-content">
+                                            <div class="checkbox-icon">🫘</div>
+                                            <span class="checkbox-label">Kidney Disease</span>
+                                            <div class="checkbox-check">
+                                                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-card glass-card">
+                                        <input type="checkbox" name="comorbidities" value="Cardiac History">
+                                        <div class="checkbox-content">
+                                            <div class="checkbox-icon">❤️‍🩹</div>
+                                            <span class="checkbox-label">Cardiac History</span>
+                                            <div class="checkbox-check">
+                                                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-card glass-card">
+                                        <input type="checkbox" name="comorbidities" value="Immunocompromised">
+                                        <div class="checkbox-content">
+                                            <div class="checkbox-icon">🛡️</div>
+                                            <span class="checkbox-label">Immunocompromised</span>
+                                            <div class="checkbox-check">
+                                                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Interventions -->
+                            <div class="context-block">
+                                <div class="context-header">
+                                    <h3><span class="context-icon">💉</span> Current Interventions</h3>
+                                    <span class="context-hint">For LLM explanation</span>
+                                </div>
+                                <div class="checkbox-grid">
+                                    <label class="checkbox-card glass-card">
+                                        <input type="checkbox" name="interventions" value="Oxygen Therapy">
+                                        <div class="checkbox-content">
+                                            <div class="checkbox-icon">🫁</div>
+                                            <span class="checkbox-label">Oxygen Therapy</span>
+                                            <div class="checkbox-check">
+                                                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-card glass-card">
+                                        <input type="checkbox" name="interventions" value="Vasopressors">
+                                        <div class="checkbox-content">
+                                            <div class="checkbox-icon">💊</div>
+                                            <span class="checkbox-label">Vasopressors</span>
+                                            <div class="checkbox-check">
+                                                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-card glass-card">
+                                        <input type="checkbox" name="interventions" value="Mechanical Ventilation">
+                                        <div class="checkbox-content">
+                                            <div class="checkbox-icon">🌬️</div>
+                                            <span class="checkbox-label">Mechanical Ventilation</span>
+                                            <div class="checkbox-check">
+                                                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-card glass-card">
+                                        <input type="checkbox" name="interventions" value="Dialysis">
+                                        <div class="checkbox-content">
+                                            <div class="checkbox-icon">🩺</div>
+                                            <span class="checkbox-label">Dialysis / CRRT</span>
+                                            <div class="checkbox-check">
+                                                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-card glass-card">
+                                        <input type="checkbox" name="interventions" value="Medication Escalation">
+                                        <div class="checkbox-content">
+                                            <div class="checkbox-icon">📈</div>
+                                            <span class="checkbox-label">Med Escalation</span>
+                                            <div class="checkbox-check">
+                                                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-card glass-card">
+                                        <input type="checkbox" name="interventions" value="Invasive Procedure">
+                                        <div class="checkbox-content">
+                                            <div class="checkbox-icon">🔧</div>
+                                            <span class="checkbox-label">Invasive Procedure</span>
+                                            <div class="checkbox-check">
+                                                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Action Section -->
+                <section class="section action-section">
+                    <div class="action-card glass-card">
+                        <div class="action-bg">
+                            <div class="action-orb orb-1"></div>
+                            <div class="action-orb orb-2"></div>
+                        </div>
+                        <div class="action-content">
+                            <div class="action-left">
+                                <div class="action-icon-wrap">
+                                    <div class="action-icon">⚡</div>
+                                    <div class="action-pulse"></div>
+                                    <div class="action-pulse delay"></div>
+                                </div>
+                                <div class="action-text">
+                                    <h3 class="action-title">Ready to Analyze</h3>
+                                    <p class="action-subtitle">AI will process all clinical data to predict deterioration risk</p>
+                                </div>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="btn btn-secondary" id="clear-btn">
+                                    <span class="btn-icon">↻</span>
+                                    <span class="btn-text">Clear</span>
+                                </button>
+                                <button class="btn btn-primary" id="predict-btn">
+                                    <div class="btn-bg"></div>
+                                    <span class="btn-icon">🔮</span>
+                                    <span class="btn-text">Predict Risk</span>
+                                    <span class="btn-arrow">→</span>
+                                    <div class="btn-shine"></div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Results Section -->
+                <section class="section" id="results-section">
+                    <div class="card premium-card results-card" data-tilt>
+                        <div class="card-bg results-bg"></div>
+                        <div class="card-border results-border"></div>
+                        <div class="card-glow results-glow"></div>
+                        <div class="card-shine"></div>
+                        
+                        <div class="card-header">
+                            <div class="card-title-area">
+                                <div class="card-icon-3d">
+                                    <div class="icon-face front">📊</div>
+                                    <div class="icon-face back">🎯</div>
+                                </div>
+                                <div class="card-titles">
+                                    <h2 class="card-title">Risk Assessment Results</h2>
+                                    <p class="card-subtitle">ML prediction with AI-generated clinical interpretation</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline" id="export-btn">
+                                <span class="btn-icon">📥</span>
+                                <span class="btn-text">Export</span>
+                            </button>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="results-layout">
+                                <!-- Score Display -->
+                                <div class="score-display">
+                                    <div class="score-visual">
+                                        <div class="score-ring-container">
+                                            <svg class="score-ring" viewBox="0 0 200 200" id="score-ring">
+                                                <defs>
+                                                    <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" style="stop-color:#6366f1"/>
+                                                        <stop offset="50%" style="stop-color:#a855f7"/>
+                                                        <stop offset="100%" style="stop-color:#06b6d4"/>
+                                                    </linearGradient>
+                                                </defs>
+                                                <circle class="score-bg-ring" cx="100" cy="100" r="85"/>
+                                                <circle class="score-fill-ring" id="score-fill" cx="100" cy="100" r="85"/>
+                                            </svg>
+                                            <div class="score-center">
+                                                <span class="score-value" id="riskScore">--</span>
+                                                <span class="score-label">Risk Score</span>
+                                            </div>
+                                            <div class="score-particles">
+                                                <span></span><span></span><span></span><span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="risk-level-badge" id="risk-badge">
+                                        <span class="risk-level-text" id="riskLevel">Awaiting Analysis</span>
+                                    </div>
+                                </div>
+
+                                <!-- Results Details -->
+                                <div class="results-details">
+                                    <div class="result-block glass-card">
+                                        <div class="result-header">
+                                            <span class="result-icon">🔍</span>
+                                            <h4>AI Clinical Interpretation</h4>
+                                        </div>
+                                        <div class="result-content" id="explanation">
+                                            <p class="placeholder-text">Complete the assessment form and click "Predict Risk" to receive an AI-generated clinical interpretation.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="result-block glass-card">
+                                        <div class="result-header">
+                                            <span class="result-icon">📦</span>
+                                            <h4>API Payload</h4>
+                                        </div>
+                                        <pre class="payload-display" id="payload-display">No payload sent yet</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>Clinical Decision Support Tool • For Healthcare Professionals Only</p>
+                    <div class="footer-meta">
+                        <span class="version">v2.1.0</span>
+                        <span class="divider">•</span>
+                        <span>© 2026 ICU Monitor Pro</span>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <div class="toast-icon" id="toast-icon">✓</div>
+        <div class="toast-content">
+            <span class="toast-message" id="toast-message">Success!</span>
+        </div>
+        <div class="toast-progress"></div>
+    </div>
+
+    <script src="scripttest!.js"></script>
+</body>
+</html>
