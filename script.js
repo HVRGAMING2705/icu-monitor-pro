@@ -1542,3 +1542,30 @@ function consoleBranding() {
 window.predictRisk = predictRisk;
 window.clearForm = clearForm;
 window.exportResults = exportResults;
+
+// ===================================
+// MOBILE SIDEBAR TOGGLE
+// ===================================
+(function initMobileSidebar() {
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const scrim = document.getElementById('sidebarScrim');
+    if (!menuBtn || !sidebar) return;
+    function setOpen(open) {
+        sidebar.classList.toggle('open', open);
+        document.body.classList.toggle('sidebar-open', open);
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    menuBtn.addEventListener('click', function () {
+        setOpen(!sidebar.classList.contains('open'));
+    });
+    if (scrim) scrim.addEventListener('click', function () { setOpen(false); });
+    sidebar.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+            if (window.innerWidth <= 1024) setOpen(false);
+        });
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+    });
+})();
