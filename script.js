@@ -9,9 +9,7 @@
 // ===================================
 const state = {
     isLoading: false,
-    lastResult: null,
-    cursorPos: { x: 0, y: 0 },
-    cursorTarget: { x: 0, y: 0 }
+    lastResult: null
 };
 
 // ===================================
@@ -19,7 +17,6 @@ const state = {
 // ===================================
 document.addEventListener('DOMContentLoaded', () => {
     initPreloader();
-    initCustomCursor();
     initParticles();
     initDateTime();
     initNavigation();
@@ -85,82 +82,6 @@ function triggerEntranceAnimations() {
             word.style.opacity = '1';
             word.style.transform = 'translateY(0)';
         }, 200 + index * 150);
-    });
-}
-
-// ===================================
-// CUSTOM CURSOR
-// ===================================
-function initCustomCursor() {
-    const cursor = document.getElementById('cursor');
-    
-    if (!cursor || isTouchDevice()) {
-        if (cursor) cursor.style.display = 'none';
-        document.body.style.cursor = 'auto';
-        return;
-    }
-    
-    const dot = cursor.querySelector('.cursor-dot');
-    const ring = cursor.querySelector('.cursor-ring');
-    const trail = cursor.querySelector('.cursor-trail');
-    
-    // Track mouse position
-    document.addEventListener('mousemove', (e) => {
-        state.cursorTarget.x = e.clientX;
-        state.cursorTarget.y = e.clientY;
-        
-        // Immediate dot update
-        dot.style.left = `${e.clientX}px`;
-        dot.style.top = `${e.clientY}px`;
-    });
-    
-    // Smooth animation for ring and trail
-    function animateCursor() {
-        // Smooth follow
-        state.cursorPos.x += (state.cursorTarget.x - state.cursorPos.x) * 0.15;
-        state.cursorPos.y += (state.cursorTarget.y - state.cursorPos.y) * 0.15;
-        
-        ring.style.left = `${state.cursorPos.x}px`;
-        ring.style.top = `${state.cursorPos.y}px`;
-        
-        trail.style.left = `${state.cursorPos.x}px`;
-        trail.style.top = `${state.cursorPos.y}px`;
-        
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-    
-    // Hover effects
-    const interactiveElements = document.querySelectorAll(
-        'a, button, input, select, textarea, .nav-link, .premium-card, .vital-card, .lab-card, .checkbox-card, .btn, .metric-card'
-    );
-    
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.classList.add('hover');
-        });
-        
-        el.addEventListener('mouseleave', () => {
-            cursor.classList.remove('hover');
-        });
-    });
-    
-    // Click effect
-    document.addEventListener('mousedown', () => {
-        cursor.classList.add('active');
-    });
-    
-    document.addEventListener('mouseup', () => {
-        cursor.classList.remove('active');
-    });
-    
-    // Hide on leave
-    document.addEventListener('mouseleave', () => {
-        cursor.style.opacity = '0';
-    });
-    
-    document.addEventListener('mouseenter', () => {
-        cursor.style.opacity = '1';
     });
 }
 
@@ -251,7 +172,7 @@ function initParticles() {
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(99, 102, 241, ${opacity})`;
+                    ctx.strokeStyle = `rgba(8, 145, 178, ${opacity})`;
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
@@ -500,7 +421,7 @@ function createInputRipple(e, input) {
     ripple.className = 'input-ripple';
     ripple.style.cssText = `
         position: absolute;
-        background: radial-gradient(circle, rgba(99, 102, 241, 0.3), transparent 70%);
+        background: radial-gradient(circle, rgba(8, 145, 178, 0.3), transparent 70%);
         border-radius: 50%;
         transform: scale(0);
         animation: inputRipple 0.6s ease-out forwards;
@@ -1466,9 +1387,6 @@ function debounce(func, wait) {
     };
 }
 
-function isTouchDevice() {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-}
 
 // ===================================
 // DYNAMIC STYLES
@@ -1525,15 +1443,15 @@ document.head.appendChild(dynamicStyles);
 function consoleBranding() {
     console.log(
         '%c ICU Monitor Pro %c v2.1 ',
-        'background: linear-gradient(135deg, #6366f1, #a855f7); color: white; font-size: 24px; font-weight: bold; padding: 12px 24px; border-radius: 12px 0 0 12px;',
-        'background: #0a0a0f; color: #818cf8; font-size: 14px; padding: 12px 18px; border-radius: 0 12px 12px 0; border: 1px solid #6366f1;'
+        'background: linear-gradient(135deg, #0891b2, #0d9488); color: white; font-size: 24px; font-weight: bold; padding: 12px 24px; border-radius: 12px 0 0 12px;',
+        'background: #0a0a0f; color: #67e8f9; font-size: 14px; padding: 12px 18px; border-radius: 0 12px 12px 0; border: 1px solid #0891b2;'
     );
     
-    console.log('%c⌨️ Keyboard Shortcuts:', 'color: #a855f7; font-weight: bold; font-size: 14px;');
-    console.log('   %cCtrl/Cmd + Enter%c    → Run Prediction', 'color: #6366f1; font-weight: bold;', 'color: #888;');
-    console.log('   %cCtrl/Cmd + Shift + C%c → Clear Form', 'color: #6366f1; font-weight: bold;', 'color: #888;');
-    console.log('   %cCtrl/Cmd + E%c        → Export Results', 'color: #6366f1; font-weight: bold;', 'color: #888;');
-    console.log('   %cEscape%c              → Clear Focus', 'color: #6366f1; font-weight: bold;', 'color: #888;');
+    console.log('%c⌨️ Keyboard Shortcuts:', 'color: #0d9488; font-weight: bold; font-size: 14px;');
+    console.log('   %cCtrl/Cmd + Enter%c    → Run Prediction', 'color: #0891b2; font-weight: bold;', 'color: #888;');
+    console.log('   %cCtrl/Cmd + Shift + C%c → Clear Form', 'color: #0891b2; font-weight: bold;', 'color: #888;');
+    console.log('   %cCtrl/Cmd + E%c        → Export Results', 'color: #0891b2; font-weight: bold;', 'color: #888;');
+    console.log('   %cEscape%c              → Clear Focus', 'color: #0891b2; font-weight: bold;', 'color: #888;');
 }
 
 // ===================================

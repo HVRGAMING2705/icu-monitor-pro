@@ -9,14 +9,14 @@
    =================================== */
 :root {
     /* Primary Colors */
-    --primary: #6366f1;
-    --primary-rgb: 99, 102, 241;
-    --primary-light: #818cf8;
-    --primary-dark: #4f46e5;
+    --primary: #0891b2;
+    --primary-rgb: 8, 145, 178;
+    --primary-light: #67e8f9;
+    --primary-dark: #0e7490;
     
     /* Secondary Colors */
-    --secondary: #a855f7;
-    --secondary-rgb: 168, 85, 247;
+    --secondary: #0d9488;
+    --secondary-rgb: 13, 148, 136;
     --accent: #06b6d4;
     --accent-rgb: 6, 182, 212;
     
@@ -33,7 +33,7 @@
     /* Vital Colors */
     --hr-color: #ef4444;
     --spo2-color: #3b82f6;
-    --map-color: #a855f7;
+    --map-color: #0d9488;
     --resp-color: #10b981;
     --temp-color: #f59e0b;
     
@@ -49,7 +49,7 @@
     /* Borders */
     --border: rgba(255, 255, 255, 0.06);
     --border-light: rgba(255, 255, 255, 0.1);
-    --border-focus: rgba(99, 102, 241, 0.5);
+    --border-focus: rgba(8, 145, 178, 0.5);
     
     /* Text */
     --text-primary: #ffffff;
@@ -106,13 +106,12 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
-    cursor: none;
 }
 
 ::selection {
@@ -407,64 +406,6 @@ body {
     50% { opacity: 1; }
 }
 
-/* ===================================
-   CUSTOM CURSOR
-   =================================== */
-.cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99999;
-    pointer-events: none;
-    mix-blend-mode: difference;
-}
-
-.cursor-dot {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: white;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, background 0.2s;
-}
-
-.cursor.hover .cursor-dot {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.cursor-ring {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s, height 0.3s, border-color 0.3s;
-}
-
-.cursor.hover .cursor-ring {
-    width: 60px;
-    height: 60px;
-    border-color: var(--primary);
-}
-
-.cursor-trail {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(var(--primary-rgb), 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.cursor.active .cursor-trail {
-    opacity: 1;
-}
 
 /* ===================================
    AURORA BACKGROUND
@@ -594,9 +535,7 @@ body {
 .sidebar-inner {
     position: relative;
     height: 100%;
-    background: rgba(8, 8, 12, 0.9);
-    backdrop-filter: blur(40px) saturate(180%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    background: #0d0d13;
     border-right: 1px solid var(--border);
     display: flex;
     flex-direction: column;
@@ -687,10 +626,7 @@ body {
     font-size: 20px;
     font-weight: 800;
     font-family: 'Space Grotesk', sans-serif;
-    background: linear-gradient(135deg, #fff, rgba(255,255,255,0.7));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #fff;
 }
 
 .logo-badge {
@@ -1082,9 +1018,7 @@ body {
 .header-bg {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(30px) saturate(180%);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    background: #0d0d13;
     border-bottom: 1px solid var(--border);
 }
 
@@ -1111,7 +1045,7 @@ body {
     padding: 6px 14px;
     background: rgba(var(--primary-rgb), 0.1);
     border: 1px solid rgba(var(--primary-rgb), 0.2);
-    border-radius: var(--radius-full);
+    border-radius: 6px;
     font-size: 11px;
     font-weight: 600;
     color: var(--primary-light);
@@ -1145,10 +1079,7 @@ body {
 }
 
 .word {
-    background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #fff;
 }
 
 .page-subtitle {
@@ -1246,10 +1177,7 @@ body {
     font-size: 26px;
     font-weight: 700;
     font-family: 'Space Grotesk', sans-serif;
-    background: linear-gradient(135deg, #fff, var(--primary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #fff;
 }
 
 .time-period {
@@ -1399,8 +1327,6 @@ body {
    =================================== */
 .glass-card {
     background: var(--bg-glass-light);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--border);
     border-radius: var(--radius-xl);
 }
@@ -1422,9 +1348,7 @@ body {
 .card-bg {
     position: absolute;
     inset: 0;
-    background: var(--bg-card);
-    backdrop-filter: blur(40px) saturate(180%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    background: #0d0d13;
 }
 
 .card-border {
@@ -1860,8 +1784,6 @@ body {
     position: absolute;
     inset: 0;
     background: var(--bg-glass-light);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
 }
 
 .vital-border {
@@ -2791,10 +2713,7 @@ body {
     font-weight: 800;
     font-family: 'Space Grotesk', sans-serif;
     line-height: 1;
-    background: linear-gradient(135deg, #fff, rgba(255,255,255,0.7));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #fff;
 }
 
 .score-label {
@@ -2986,8 +2905,7 @@ body {
     align-items: center;
     gap: 14px;
     padding: 18px 24px;
-    background: var(--bg-card);
-    backdrop-filter: blur(20px);
+    background: #0d0d13;
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
@@ -3186,13 +3104,3 @@ body {
     border: 0;
 }
 
-/* Disable cursor on mobile */
-@media (hover: none) and (pointer: coarse) {
-    body {
-        cursor: auto;
-    }
-    
-    .cursor {
-        display: none;
-    }
-}
