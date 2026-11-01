@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ICU Monitor Pro — AI-powered clinical intelligence platform for early deterioration prediction and real-time patient monitoring.">
+    <meta name="description" content="ICU Monitor Pro — Browser-based early deterioration risk estimator for ICU assessment practice (demo — not for clinical use).">
     <meta name="keywords" content="ICU Monitor Pro, clinical intelligence, patient monitoring, early deterioration prediction, AI healthcare, ICU dashboard">
     <meta name="author" content="Vikranth Reddy">
     <meta name="robots" content="index, follow">
@@ -11,21 +11,21 @@
     <meta name="theme-color" content="#000000">
     <meta property="og:type" content="website">
     <meta property="og:title" content="ICU Monitor Pro | AI Clinical Intelligence">
-    <meta property="og:description" content="ICU Monitor Pro — AI-powered clinical intelligence platform for early deterioration prediction and real-time patient monitoring.">
+    <meta property="og:description" content="ICU Monitor Pro — Browser-based early deterioration risk estimator for ICU assessment practice (demo — not for clinical use).">
     <meta property="og:url" content="https://icu-monitor-pro.vercel.app/">
     <meta property="og:site_name" content="ICU Monitor Pro">
-    <meta property="og:image" content="https://icu-monitor-pro.vercel.app/favicon.svg">
+    <meta property="og:image" content="https://icu-monitor-pro.vercel.app/og.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ICU Monitor Pro | AI Clinical Intelligence">
-    <meta name="twitter:description" content="ICU Monitor Pro — AI-powered clinical intelligence platform for early deterioration prediction and real-time patient monitoring.">
-    <meta name="twitter:image" content="https://icu-monitor-pro.vercel.app/favicon.svg">
+    <meta name="twitter:description" content="ICU Monitor Pro — Browser-based early deterioration risk estimator for ICU assessment practice (demo — not for clinical use).">
+    <meta name="twitter:image" content="https://icu-monitor-pro.vercel.app/og.png">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "ICU Monitor Pro",
       "url": "https://icu-monitor-pro.vercel.app/",
-      "description": "AI-powered clinical intelligence platform for early deterioration prediction and real-time patient monitoring."
+      "description": "Browser-based early deterioration risk estimator for ICU assessment practice (demo — not for clinical use)."
     }
     </script>
     <title>ICU Monitor Pro | AI Clinical Intelligence</title> <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -82,7 +82,7 @@
                     <div class="progress-fill"></div>
                     <div class="progress-glow"></div>
                 </div>
-                <div class="progress-text">Initializing AI Systems...</div>
+                <div class="progress-text">Initializing assessment...</div>
             </div>
         </div>
     </div>
@@ -151,7 +151,7 @@
                                 </div>
                                 <div class="nav-text">
                                     <span class="nav-label">Vital Signs</span>
-                                    <span class="nav-desc">Real-time data</span>
+                                    <span class="nav-desc">Manual entry</span>
                                 </div>
                                 <span class="nav-badge ml-badge">ML</span>
                                 <div class="nav-arrow">
@@ -207,7 +207,22 @@
                                 </div>
                                 <div class="nav-text">
                                     <span class="nav-label">Risk Results</span>
-                                    <span class="nav-desc">AI predictions</span>
+                                    <span class="nav-desc">Risk estimates</span>
+                                </div>
+                                <div class="nav-arrow">
+                                    <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                                </div>
+                            </a>
+                            <a href="#bedboard-section" class="nav-link" data-section="bedboard">
+                                <div class="nav-link-bg"></div>
+                                <div class="nav-link-glow"></div>
+                                <div class="nav-icon">
+                                    <span>🛏️</span>
+                                    <div class="nav-icon-ring"></div>
+                                </div>
+                                <div class="nav-text">
+                                    <span class="nav-label">Bed Board</span>
+                                    <span class="nav-desc">Beds, alerts, settings</span>
                                 </div>
                                 <div class="nav-arrow">
                                     <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
@@ -235,9 +250,15 @@
                                 Intensivist
                             </span>
                         </div>
-                        <button class="user-menu-btn">
+                        <button class="user-menu-btn" aria-label="Account actions">
                             <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg>
                         </button>
+                    </div>
+                    <div class="user-menu" id="userMenu" role="menu">
+                        <button type="button" class="user-menu-item" data-menu-action="go-bedboard" role="menuitem">🛏️ Go to Bed Board</button>
+                        <button type="button" class="user-menu-item" data-menu-action="go-settings" role="menuitem">⚙️ Threshold settings</button>
+                        <button type="button" class="user-menu-item" data-menu-action="export-board" role="menuitem">📥 Export board data</button>
+                        <button type="button" class="user-menu-item" data-menu-action="clear-data" role="menuitem">🗑️ Clear saved data</button>
                     </div>
                 </div>
             </div>
@@ -264,7 +285,7 @@
                                 <span class="word">Intelligence</span>
                             </span>
                         </h1>
-                        <p class="page-subtitle">AI-Powered Early Deterioration Prediction System</p>
+                        <p class="page-subtitle">Early Deterioration Risk Estimator</p>
                     </div>
                     <div class="header-right">
                         <div class="header-metrics">
@@ -425,10 +446,7 @@
                                 </div>
                             </div>
                             <div class="card-badges">
-                                <span class="badge badge-live">
-                                    <span class="live-dot"></span>
-                                    LIVE
-                                </span>
+                                <span class="badge badge-manual">Manual entry</span>
                                 <span class="badge badge-ml">
                                     <span class="badge-icon">🤖</span>
                                     ML Input
@@ -957,7 +975,7 @@
                                 </div>
                                 <div class="action-text">
                                     <h3 class="action-title">Ready to Analyze</h3>
-                                    <p class="action-subtitle">AI will process all clinical data to predict deterioration risk</p>
+                                    <p class="action-subtitle">Your entries are scored locally in your browser (demo mode)</p>
                                 </div>
                             </div>
                             <div class="action-buttons">
@@ -993,7 +1011,7 @@
                                 </div>
                                 <div class="card-titles">
                                     <h2 class="card-title">Risk Assessment Results</h2>
-                                    <p class="card-subtitle">ML prediction with AI-generated clinical interpretation</p>
+                                    <p class="card-subtitle">Risk estimate with clinical interpretation (demo scoring)</p>
                                 </div>
                             </div>
                             <button class="btn btn-outline" id="export-btn">
@@ -1038,10 +1056,10 @@
                                     <div class="result-block glass-card">
                                         <div class="result-header">
                                             <span class="result-icon">🔍</span>
-                                            <h4>AI Clinical Interpretation</h4>
+                                            <h4>Clinical Interpretation</h4>
                                         </div>
                                         <div class="result-content" id="explanation">
-                                            <p class="placeholder-text">Complete the assessment form and click "Predict Risk" to receive an AI-generated clinical interpretation.</p>
+                                            <p class="placeholder-text">Complete the assessment form and click "Predict Risk" to receive a clinical interpretation.</p>
                                         </div>
                                     </div>
 
@@ -1059,15 +1077,114 @@
                 </section>
             </div>
 
+                <!-- Bed Board Section -->
+                <section class="section" id="bedboard-section">
+                    <div class="card premium-card">
+                        <div class="card-bg"></div>
+                        <div class="card-border"></div>
+                        <div class="card-header">
+                            <div class="card-title-area">
+                                <div class="card-icon-3d">
+                                    <div class="icon-face front">🛏️</div>
+                                    <div class="icon-face back">📋</div>
+                                </div>
+                                <div class="card-titles">
+                                    <h2 class="card-title">Bed Board</h2>
+                                    <p class="card-subtitle">Beds and patients you enter yourself — stored only in this browser. No seeded or demo patients.</p>
+                                </div>
+                            </div>
+                            <div class="card-badges">
+                                <span class="badge badge-manual" id="board-updated">Board last changed: never</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="board-form">
+                                <input type="text" id="board-bed" class="input board-input" placeholder="Bed label, e.g. ICU-04" autocomplete="off" aria-label="Bed label">
+                                <input type="text" id="board-patient" class="input board-input" placeholder="Patient ID (optional)" autocomplete="off" aria-label="Patient ID for bed">
+                                <select id="board-status" class="input board-input" aria-label="Bed status">
+                                    <option value="Occupied">Occupied</option>
+                                    <option value="Vacant" selected>Vacant</option>
+                                    <option value="Cleaning">Cleaning</option>
+                                    <option value="Reserved">Reserved</option>
+                                </select>
+                                <button type="button" class="btn btn-primary" id="board-add-btn"><span class="btn-text">Add bed</span></button>
+                            </div>
+                            <div class="board-grid" id="board-grid"></div>
+                        </div>
+                    </div>
+
+                    <div class="card premium-card">
+                        <div class="card-bg"></div>
+                        <div class="card-border"></div>
+                        <div class="card-header">
+                            <div class="card-title-area">
+                                <div class="card-titles">
+                                    <h2 class="card-title">Alerts</h2>
+                                    <p class="card-subtitle">Created only when you run an assessment scoring MEDIUM or HIGH. Acknowledge to stamp the real time.</p>
+                                </div>
+                            </div>
+                            <span class="badge badge-manual" id="alerts-count">No unacknowledged alerts</span>
+                        </div>
+                        <div class="card-body">
+                            <label class="board-filter-label">Show
+                                <select id="alert-filter" class="input board-input">
+                                    <option value="all">All alerts</option>
+                                    <option value="medium">Medium and above</option>
+                                    <option value="high">High only</option>
+                                </select>
+                            </label>
+                            <div class="alerts-list" id="alerts-list"></div>
+                        </div>
+                    </div>
+
+                    <div class="card premium-card">
+                        <div class="card-bg"></div>
+                        <div class="card-border"></div>
+                        <div class="card-header">
+                            <div class="card-title-area">
+                                <div class="card-titles">
+                                    <h2 class="card-title">Thresholds &amp; live-feed integration</h2>
+                                    <p class="card-subtitle">These cutoffs actually drive risk levels, alert creation, and the alert filter above.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="settings-grid">
+                                <label class="settings-field">High-risk cutoff (%)
+                                    <input type="number" id="set-high" class="input" min="1" max="100" value="70">
+                                </label>
+                                <label class="settings-field">Medium-risk cutoff (%)
+                                    <input type="number" id="set-medium" class="input" min="0" max="99" value="40">
+                                </label>
+                                <label class="settings-field">Backend prediction endpoint
+                                    <input type="text" id="set-endpoint" class="input" value="http://localhost:8000/predict" autocomplete="off">
+                                </label>
+                                <label class="settings-field">FHIR base URL (live feed — optional)
+                                    <input type="text" id="set-fhir" class="input" placeholder="https://your-hospital-fhir-server/fhir" autocomplete="off">
+                                </label>
+                            </div>
+                            <p class="settings-note">Live vitals are <strong>not</strong> connected. A real hospital feed needs, from hospital IT: (1) a FHIR R4 server base URL with Observation read access, (2) OAuth2 / SMART-on-FHIR credentials the hospital issues, (3) a device gateway or HL7v2 feed mapped to FHIR Observations, and (4) that origin added to <code>connect-src</code> in <code>vercel.json</code> plus CORS allowed for this site. Until all four exist, this page shows no live vitals and invents none — use “Test live-feed connection” to check (1) without fabricating data.</p>
+                            <p class="settings-note" id="fhir-status"></p>
+                            <div class="board-actions">
+                                <button type="button" class="btn btn-primary" id="settings-save-btn"><span class="btn-text">Save settings</span></button>
+                                <button type="button" class="btn btn-outline" id="fhir-test-btn"><span class="btn-text">Test live-feed connection</span></button>
+                                <button type="button" class="btn btn-outline" id="board-export-btn"><span class="btn-text">Export board data (JSON)</span></button>
+                                <button type="button" class="btn btn-outline" id="board-clear-btn"><span class="btn-text">Clear saved data</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             <!-- Footer -->
             <footer class="footer">
                 <div class="footer-content">
-                    <p>Clinical Decision Support Tool • For Healthcare Professionals Only</p>
+                    <p>Demonstration project • Not for clinical use</p>
                     <div class="footer-meta">
-                        <span class="version">v2.1.0</span>
+                        <span class="version">v2.3.0</span>
                         <span class="divider">•</span>
                         <span>© 2026 ICU Monitor Pro</span>
                     </div>
+                    <p class="footer-legal"><a href="/legal.html">Privacy · Terms</a> • Built by <a href="https://vikranthreddy.vercel.app">Vikranth Reddy</a></p>
                 </div>
             <span class="fleet-legal" style="display:block;text-align:center;padding:10px 0;font-size:13px"><a href="/legal.html">Privacy · Terms</a></span>
 </footer>
